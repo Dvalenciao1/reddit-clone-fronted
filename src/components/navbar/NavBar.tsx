@@ -13,24 +13,27 @@ import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
 import InboxIcon from "@mui/icons-material/MoveToInbox";
 import MailIcon from "@mui/icons-material/Mail";
-import { Button, Container, StyledEngineProvider, TextField } from "@mui/material";
+import { Button, Container, TextField } from "@mui/material";
+import Grid from "@mui/material/Grid2";
 
 const drawerWidth = 240;
 
 export default function ClippedDrawer(props: any) {
 	return (
-		<Box sx={{ display: "flex" }}>
+		<Box sx={{ flexGrow: 1 }}>
 			<AppBar position="fixed" sx={{ zIndex: 1200 + 1 }}>
-				<Toolbar sx={{ display: "flex", justifyContent: "space-between" }}>
+				<Toolbar sx={{display:'flex', justifyContent:"space-between"}}>
 					<Typography variant="h6" noWrap component="div">
 						Logo
 					</Typography>
-					<TextField label="Search Reddit"></TextField>
+					<Box sx={{width:'30rem', paddingY:'8px'}}>
+						<TextField size='small' slotProps={{input:{style:{borderRadius:'50px', }}}} fullWidth={true} label="Search Reddit"></TextField>
+					</Box>
 					<Box>
-						<Button color="inherit" variant="outlined" sx={{mr:3}}>
+						<Button color="secondary" variant="contained" sx={{ mr: 3, borderRadius:5}}>
 							Get Access
 						</Button>
-						<Button color="inherit" variant="outlined">
+						<Button color="primary" variant="contained" sx={{borderRadius:5}}>
 							Login
 						</Button>
 					</Box>
