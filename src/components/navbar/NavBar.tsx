@@ -22,18 +22,18 @@ export default function ClippedDrawer(props: any) {
 	return (
 		<Box sx={{ flexGrow: 1 }}>
 			<AppBar position="fixed" sx={{ zIndex: 1200 + 1 }}>
-				<Toolbar sx={{display:'flex', justifyContent:"space-between"}}>
+				<Toolbar>
 					<Typography variant="h6" noWrap component="div">
 						Logo
 					</Typography>
-					<Box sx={{width:'30rem', paddingY:'8px'}}>
-						<TextField size='small' slotProps={{input:{style:{borderRadius:'50px', }}}} fullWidth={true} label="Search Reddit"></TextField>
+					<Box sx={{ display: "flex", direction: "row", justifyContent: "center", alignItems: "center", paddingY: "8px", flexGrow: 1 }}>
+						<TextField size="small" slotProps={{ input: { style: { borderRadius: "50px" } } }} fullWidth={true} label="Search Reddit"></TextField>
 					</Box>
 					<Box>
-						<Button color="secondary" variant="contained" sx={{ mr: 3, borderRadius:5}}>
+						<Button color="secondary" variant="contained" sx={{ mr: 3, borderRadius: 5 }}>
 							Get Access
 						</Button>
-						<Button color="primary" variant="contained" sx={{borderRadius:5}}>
+						<Button color="primary" variant="contained" sx={{ borderRadius: 5 }}>
 							Login
 						</Button>
 					</Box>
