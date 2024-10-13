@@ -1,14 +1,15 @@
 import * as React from "react";
 // Components import
-import { ListItemText, ListItemButton, ListItem, Divider, Typography, List, Toolbar, Button, AppBar, Drawer, Box, IconButton, ListItemIcon, TextField } from "@mui/material";
+import { Typography, List, Toolbar, Button, AppBar, Drawer, Box, IconButton, TextField } from "@mui/material";
 // Icons
-import { MoreHoriz, QrCode, HomeRounded, Moving, ExpandLess, ExpandMore } from "@mui/icons-material";
+import { MoreHoriz, QrCode, HomeRounded, Moving, ExpandLess, ExpandMore, EmojiEmotionsRounded, SportsEsportsRounded, LiveHelpRounded, LiveHelpOutlined, SportsEsportsOutlined, EmojiEmotionsOutlined, MemoryOutlined, StarBorderOutlined, MovieOutlined } from "@mui/icons-material";
 import Reddit from "../icon/reddit";
+import NestedList from "../list/NestedList";
+import { listProps } from "./IListProps";
 
-const drawerWidth = 240; 
+const drawerWidth = 271;
 
-
-const itemList = [
+const itemList: listProps[] = [
 	{
 		name: "Home",
 		icon: <HomeRounded />,
@@ -19,20 +20,150 @@ const itemList = [
 	},
 	{
 		name: "Topics",
-		icon: "",
 		separate: ["top", "bottom"],
+		colapse: 1,
 		subItems: [
 			{
-				name: "Internet Culture",
+				name: "Internet Culture (Viral)",
+				icon: <EmojiEmotionsOutlined />,
+				isDense: true,
+				borderLeft: 1,
+				colapse: 3,
+				subItems: [
+					{
+						name: "Amazing",
+					},
+					{
+						name: "Animals & Pets",
+					},
+					{
+						name: "Cringe & Facepalm",
+					},
+					{
+						name: "Funny",
+					},
+					{
+						name: "Interesting",
+					},
+					{
+						name: "Memes",
+					},
+					{
+						name: " Oddly Satisfying",
+					},
+					{
+						name: " Reddit Meta",
+					},
+					{
+						name: "Wholesome & Heartwarming",
+					},
+				],
 			},
 			{
 				name: "Games",
+				icon: <SportsEsportsOutlined />,
+				isDense: true,
+				borderLeft: 1,
+				colapse: 3,
+				subItems: [
+					{
+						name: "Action Games",
+					},
+					{
+						name: "Adventure Games",
+					},
+					{
+						name: "Esports",
+					},
+					{
+						name: "Gaming Console & Gear",
+					},
+					{
+						name: "Gaming News & Discussion",
+					},
+					{
+						name: "Mobile Games",
+					},
+					{
+						name: "Other Games",
+					},
+					{
+						name: "Role-Playing Games",
+					},
+					{
+						name: "Simulation Games",
+					},
+					{
+						name: "Sports & Racing Games",
+					},
+					{
+						name: "Strategy Games",
+					},
+					{
+						name: "Tabletop Games",
+					},
+				],
 			},
 			{
 				name: "Q&As",
+				icon: <LiveHelpOutlined />,
+				isDense: true,
+				borderLeft: 1,
+				colapse: 3,
+				subItems: [
+					{
+						name: "Q&As",
+					},
+					{
+						name: "Stories & Confessions",
+					},
+				],
 			},
 			{
 				name: "Technology",
+				icon: <MemoryOutlined />,
+				isDense: true,
+				borderLeft: 1,
+				colapse: 3,
+				subItems: [
+					{
+						name: "Q&As",
+					},
+					{
+						name: "Stories & Confessions",
+					},
+				],
+			},
+			{
+				name: "Pop Culture",
+				icon: <StarBorderOutlined />,
+				isDense: true,
+				borderLeft: 1,
+				colapse: 3,
+				subItems: [
+					{
+						name: "Celebrities",
+					},
+					{
+						name: "Creators & Influencers",
+					},
+					{
+						name: "Generations & Nosalgia",
+					},
+					{
+						name: "Podcasts",
+					},
+					{
+						name: "Streamers",
+					},
+					{
+						name: "Tarot & Astrology",
+					},
+				],
+			},
+			{
+				name: "Movies & TV",
+				icon: <MovieOutlined />,
 			},
 		],
 	},
@@ -74,20 +205,7 @@ export default function ClippedDrawer(props: any) {
 				}}>
 				<Toolbar />
 				<Box sx={{ overflow: "auto" }}>
-					<List>
-						{itemList.map((item, index) => (
-							<Box key={index}>
-								{item?.separate?.includes("top") ? <Divider /> : ""}
-								<ListItem key={item.name} disablePadding>
-									<ListItemButton >
-										<ListItemIcon>{item.icon}</ListItemIcon>
-										<ListItemText primary={item.name} />
-									</ListItemButton>
-								</ListItem>
-								{item?.separate?.includes("bottom") ? <Divider /> : ""}
-							</Box>
-						))}
-					</List>
+					<NestedList list={itemList} />
 				</Box>
 			</Drawer>
 			<Box component="main" sx={{ flexGrow: 1, p: 3 }}>
