@@ -11,12 +11,12 @@ const RenderList = ({ name, icon, separate, subItems, isDense, borderLeft, colap
 	};
 	if (!subItems) {
 		return (
-			<div>
+			<>
 				<ListItemButton>
 					{icon ? <ListItemIcon>{icon}</ListItemIcon> : null}
 					<ListItemText primary={name} />
 				</ListItemButton>
-			</div>
+			</>
 		);
 	} else {
 		return (
