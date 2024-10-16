@@ -1,5 +1,7 @@
 export default function AuthPage() {
     return (
-        <h1>HOLA</h1>
+        <div>
+            <h1>Auth Page</h1>
+        </div>
     );
 }
