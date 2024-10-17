@@ -1,7 +1,9 @@
+import { CssBaseline, Typography } from "@mui/material";
+
 export default function Home() {
 	return (
-		<>
-			adwwad
-		</>
+		<h1>
+			Home
+		</h1>
 	);
 }

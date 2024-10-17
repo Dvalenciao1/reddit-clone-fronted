@@ -169,7 +169,7 @@ const itemList: listProps[] = [
 	},
 ];
 
-export default function ClippedDrawer(props: any) {
+export default function ClippedDrawer() {
 	return (
 		<Box>
 			<AppBar position="fixed" sx={{ zIndex: 1200 + 1 }}>
@@ -208,10 +208,7 @@ export default function ClippedDrawer(props: any) {
 					<NestedList list={itemList} />
 				</Box>
 			</Drawer>
-			<Box component="main" sx={{ flexGrow: 1, p: 3 }}>
-				<Toolbar />
-				{props.page}
-			</Box>
+			
 		</Box>
 	);
 }

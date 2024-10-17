@@ -1,3 +1,4 @@
+import { Box } from "@mui/material";
 import { Metadata } from "next";
 import { Inter } from "next/font/google";
 
@@ -14,7 +15,7 @@ export default function AuthLayout({
 	return (
 		<html lang="en">
 			<body className={inter.className}>
-				<div>{children}</div>
+				<Box component="main">{children}</Box>
 			</body>
 		</html>
 	);
