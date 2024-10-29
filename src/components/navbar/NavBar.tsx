@@ -1,173 +1,16 @@
 import * as React from "react";
 // Components import
-import { Typography, List, Toolbar, Button, AppBar, Drawer, Box, IconButton, TextField } from "@mui/material";
+import { Typography, Toolbar, Button, AppBar, Drawer, Box, IconButton, TextField } from "@mui/material";
 // Icons
-import { MoreHoriz, QrCode, HomeRounded, Moving, ExpandLess, ExpandMore, EmojiEmotionsRounded, SportsEsportsRounded, LiveHelpRounded, LiveHelpOutlined, SportsEsportsOutlined, EmojiEmotionsOutlined, MemoryOutlined, StarBorderOutlined, MovieOutlined } from "@mui/icons-material";
+import { MoreHoriz, QrCode} from "@mui/icons-material";
 import Reddit from "../icon/reddit";
 import NestedList from "../list/NestedList";
-import { listProps } from "./IListProps";
+import LoginForm from "../auth/loginForm";
+import { itemList } from "@/utils/menu";
 
 const drawerWidth = 271;
 
-const itemList: listProps[] = [
-	{
-		name: "Home",
-		icon: <HomeRounded />,
-	},
-	{
-		name: "Popular",
-		icon: <Moving />,
-	},
-	{
-		name: "Topics",
-		separate: ["top", "bottom"],
-		colapse: 1,
-		subItems: [
-			{
-				name: "Internet Culture (Viral)",
-				icon: <EmojiEmotionsOutlined />,
-				isDense: true,
-				borderLeft: 1,
-				colapse: 3,
-				subItems: [
-					{
-						name: "Amazing",
-					},
-					{
-						name: "Animals & Pets",
-					},
-					{
-						name: "Cringe & Facepalm",
-					},
-					{
-						name: "Funny",
-					},
-					{
-						name: "Interesting",
-					},
-					{
-						name: "Memes",
-					},
-					{
-						name: " Oddly Satisfying",
-					},
-					{
-						name: " Reddit Meta",
-					},
-					{
-						name: "Wholesome & Heartwarming",
-					},
-				],
-			},
-			{
-				name: "Games",
-				icon: <SportsEsportsOutlined />,
-				isDense: true,
-				borderLeft: 1,
-				colapse: 3,
-				subItems: [
-					{
-						name: "Action Games",
-					},
-					{
-						name: "Adventure Games",
-					},
-					{
-						name: "Esports",
-					},
-					{
-						name: "Gaming Console & Gear",
-					},
-					{
-						name: "Gaming News & Discussion",
-					},
-					{
-						name: "Mobile Games",
-					},
-					{
-						name: "Other Games",
-					},
-					{
-						name: "Role-Playing Games",
-					},
-					{
-						name: "Simulation Games",
-					},
-					{
-						name: "Sports & Racing Games",
-					},
-					{
-						name: "Strategy Games",
-					},
-					{
-						name: "Tabletop Games",
-					},
-				],
-			},
-			{
-				name: "Q&As",
-				icon: <LiveHelpOutlined />,
-				isDense: true,
-				borderLeft: 1,
-				colapse: 3,
-				subItems: [
-					{
-						name: "Q&As",
-					},
-					{
-						name: "Stories & Confessions",
-					},
-				],
-			},
-			{
-				name: "Technology",
-				icon: <MemoryOutlined />,
-				isDense: true,
-				borderLeft: 1,
-				colapse: 3,
-				subItems: [
-					{
-						name: "Q&As",
-					},
-					{
-						name: "Stories & Confessions",
-					},
-				],
-			},
-			{
-				name: "Pop Culture",
-				icon: <StarBorderOutlined />,
-				isDense: true,
-				borderLeft: 1,
-				colapse: 3,
-				subItems: [
-					{
-						name: "Celebrities",
-					},
-					{
-						name: "Creators & Influencers",
-					},
-					{
-						name: "Generations & Nosalgia",
-					},
-					{
-						name: "Podcasts",
-					},
-					{
-						name: "Streamers",
-					},
-					{
-						name: "Tarot & Astrology",
-					},
-				],
-			},
-			{
-				name: "Movies & TV",
-				icon: <MovieOutlined />,
-			},
-		],
-	},
-];
+
 
 export default function ClippedDrawer() {
 	return (
@@ -187,9 +30,7 @@ export default function ClippedDrawer() {
 						<Button color="secondary" variant="contained" sx={{ borderRadius: 5, display: { xs: "none", md: "flex" } }} startIcon={<QrCode />}>
 							Get Access
 						</Button>
-						<Button color="primary" variant="contained" sx={{ borderRadius: 5 }}>
-							Login
-						</Button>
+						<LoginForm />
 						<IconButton aria-label="more">
 							<MoreHoriz />
 						</IconButton>
