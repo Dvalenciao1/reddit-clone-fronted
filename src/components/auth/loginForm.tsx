@@ -1,6 +1,8 @@
 "use client";
-import { Button, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle, Divider, IconButton, Link, TextField, Typography } from "@mui/material";
+import { Box, Button, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle, Divider, IconButton, Link, TextField, Typography } from "@mui/material";
 import ClearRoundedIcon from "@mui/icons-material/ClearRounded";
+import GoogleIcon from "@mui/icons-material/Google";
+import AppleIcon from "@mui/icons-material/Apple";
 import React from "react";
 
 export default function LoginForm() {
@@ -19,7 +21,7 @@ export default function LoginForm() {
 			</Button>
 			<Dialog fullWidth={true} maxWidth={"sm"} open={open} onClose={handleClose}>
 				<DialogActions>
-					<IconButton>
+					<IconButton onClick={handleClose}>
 						<ClearRoundedIcon />
 					</IconButton>
 				</DialogActions>
@@ -31,10 +33,20 @@ export default function LoginForm() {
 						<DialogContentText>By continuing, you agree to out User Agreement and acknowledge that you understand the Privacy Policy</DialogContentText>
 						<div className="flex flex-col py-5">
 							<Button className="mb-[6px] rounded-full bg-slate-100 text-slate-900" variant="contained">
-								Continue with Google
+								<div className="grid grid-cols-4">
+									<GoogleIcon fontSize="small" />
+									<Typography variant="button" className="col-span-2">
+										Continue with Google
+									</Typography>
+								</div>
 							</Button>
 							<Button className="mt-[6px] rounded-full bg-slate-100 text-slate-900" variant="contained">
-								Continue with Apple
+								<div className="grid grid-cols-4">
+									<AppleIcon fontSize="small" />
+									<Typography variant="button" className="col-span-2">
+										Continue with Apple
+									</Typography>
+								</div>
 							</Button>
 						</div>
 						<Divider>Or</Divider>
@@ -57,8 +69,8 @@ export default function LoginForm() {
 						</div>
 					</DialogContent>
 				</DialogContent>
-				<DialogActions className="flex flex-col px-[80px] py-[40px]">
-					<Button size="large" disabled variant="contained" className="rounded-full">
+				<DialogActions className="flex flex-col px-[100px] py-[40px]">
+					<Button fullWidth disabled variant="contained" className="rounded-full">
 						Login
 					</Button>
 				</DialogActions>
