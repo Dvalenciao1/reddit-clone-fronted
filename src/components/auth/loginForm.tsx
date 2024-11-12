@@ -1,9 +1,10 @@
 "use client";
-import { Box, Button, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle, Divider, IconButton, Link, TextField, Typography } from "@mui/material";
+import { Box, Button, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle, Divider, IconButton, Link, TextField, ThemeProvider, Typography } from "@mui/material";
 import ClearRoundedIcon from "@mui/icons-material/ClearRounded";
 import GoogleIcon from "@mui/icons-material/Google";
 import AppleIcon from "@mui/icons-material/Apple";
 import React from "react";
+import { theme } from "@/theme/theme";
 
 export default function LoginForm() {
 	const [open, setOpen] = React.useState(false);
@@ -26,27 +27,21 @@ export default function LoginForm() {
 					</IconButton>
 				</DialogActions>
 				<DialogContent sx={{ px: "80px" }}>
-					<DialogTitle>
-						<Typography variant="h4">Login</Typography>
-					</DialogTitle>
+					<DialogTitle variant="h4">Login</DialogTitle>
 					<DialogContent>
 						<DialogContentText>By continuing, you agree to out User Agreement and acknowledge that you understand the Privacy Policy</DialogContentText>
 						<div className="flex flex-col py-5">
-							<Button className="mb-[6px] rounded-full bg-slate-100 text-slate-900" variant="contained">
-								<div className="grid grid-cols-4">
-									<GoogleIcon fontSize="small" />
-									<Typography variant="button" className="col-span-2">
-										Continue with Google
-									</Typography>
-								</div>
+							<Button className="mb-[6px] rounded-full" disableElevation color="slate" variant="contained">
+								<GoogleIcon fontSize="small" />
+								<Typography variant="button" className="grow">
+									Continue with Google
+								</Typography>
 							</Button>
-							<Button className="mt-[6px] rounded-full bg-slate-100 text-slate-900" variant="contained">
-								<div className="grid grid-cols-4">
-									<AppleIcon fontSize="small" />
-									<Typography variant="button" className="col-span-2">
-										Continue with Apple
-									</Typography>
-								</div>
+							<Button className="mt-[6px] rounded-full" disableElevation color="slate" variant="contained">
+								<AppleIcon fontSize="small" />
+								<Typography variant="button" className="grow">
+									Continue with Apple
+								</Typography>
 							</Button>
 						</div>
 						<Divider>Or</Divider>
