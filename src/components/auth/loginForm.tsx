@@ -1,10 +1,9 @@
 "use client";
-import { Box, Button, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle, Divider, IconButton, Link, TextField, ThemeProvider, Typography } from "@mui/material";
+import { Button, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle, Divider, IconButton, Link, TextField, Typography } from "@mui/material";
 import ClearRoundedIcon from "@mui/icons-material/ClearRounded";
-import GoogleIcon from "@mui/icons-material/Google";
 import AppleIcon from "@mui/icons-material/Apple";
 import React from "react";
-import { theme } from "@/theme/theme";
+import GoogleIcon from "../icon/GoogleIcon";
 
 export default function LoginForm() {
 	const [open, setOpen] = React.useState(false);
