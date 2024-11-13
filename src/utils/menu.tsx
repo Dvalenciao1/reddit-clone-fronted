@@ -1,4 +1,4 @@
-import { listProps } from "@/components/navbar/IListProps";
+import { listProps } from "@/interfaces/IListProps";
 import { HomeRounded, Moving, LiveHelpOutlined, SportsEsportsOutlined, EmojiEmotionsOutlined, MemoryOutlined, StarBorderOutlined, MovieOutlined } from "@mui/icons-material";
 
 export const itemList: listProps[] = [

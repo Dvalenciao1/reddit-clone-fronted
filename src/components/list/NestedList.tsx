@@ -2,7 +2,7 @@
 import { Box, Collapse, Divider, List, ListItemButton, ListItemIcon, ListItemText } from "@mui/material";
 import React from "react";
 import { ExpandLess, ExpandMore } from "@mui/icons-material";
-import { listProps } from "../navbar/IListProps";
+import { listProps } from "../../interfaces/IListProps";
 
 const RenderList = ({ name, icon, separate, subItems, isDense, borderLeft, colapse }: listProps) => {
 	const [open, setOpen] = React.useState(false);
