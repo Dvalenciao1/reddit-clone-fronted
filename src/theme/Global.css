@@ -1,0 +1,5 @@
+@tailwind utilities;
+
+* {
+	scrollbar-width: thin;
+}
