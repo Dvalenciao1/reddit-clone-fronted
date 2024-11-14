@@ -51,7 +51,7 @@ export default function ClippedDrawer({
 					<NestedList list={itemList} />
 				</Box>
 			</Drawer>
-			<Box component="main" sx={{ flexGrow: 1, pt: 8, px:5 }}>
+			<Box component="main" sx={{ flexGrow: 1, pt: 8, px: 5, height: "100vh" }} className="flex justify-center">
 				{children}
 			</Box>
 		</Box>
