@@ -2,7 +2,7 @@ import * as React from "react";
 // Components import
 import { Typography, Toolbar, Button, AppBar, Drawer, Box, IconButton, TextField } from "@mui/material";
 // Icons
-import { MoreHoriz, QrCode} from "@mui/icons-material";
+import { MoreHoriz, QrCode } from "@mui/icons-material";
 import Reddit from "../icon/reddit";
 import NestedList from "../list/NestedList";
 import LoginForm from "../auth/loginForm";
@@ -10,11 +10,13 @@ import { itemList } from "@/utils/menu";
 
 const drawerWidth = 271;
 
-
-
-export default function ClippedDrawer() {
+export default function ClippedDrawer({
+	children,
+}: Readonly<{
+	children: React.ReactNode;
+}>) {
 	return (
-		<Box>
+		<Box sx={{ display: "flex" }}>
 			<AppBar position="fixed" sx={{ zIndex: 1200 + 1 }}>
 				<Toolbar>
 					<Box sx={{ flexGrow: 1, display: "flex", justifyContent: "flex-start", gap: "5px" }}>
@@ -49,7 +51,9 @@ export default function ClippedDrawer() {
 					<NestedList list={itemList} />
 				</Box>
 			</Drawer>
-			
+			<Box component="main" sx={{ flexGrow: 1, pt: 8, px:5 }}>
+				{children}
+			</Box>
 		</Box>
 	);
 }

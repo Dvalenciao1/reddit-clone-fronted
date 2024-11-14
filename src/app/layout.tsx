@@ -23,10 +23,7 @@ export default function RootLayout({
 			<ThemeProvider theme={theme}>
 				<CssBaseline enableColorScheme />
 				<body className={inter.className}>
-					<NavBar />
-					<Box component="main" sx={{ flexGrow: 2, pl: "18rem", pt: 7 }}>
-						{children}
-					</Box>
+					<NavBar>{children}</NavBar>
 				</body>
 			</ThemeProvider>
 		</html>
