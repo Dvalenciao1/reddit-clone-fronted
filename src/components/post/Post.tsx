@@ -1,12 +1,13 @@
-import { Avatar, Button, Card, CardActionArea, CardActions, CardContent, CardMedia, IconButton, Typography } from "@mui/material";
+import { Avatar, Box, Button, Card, CardActionArea, CardActions, CardContent, CardMedia, IconButton, Typography } from "@mui/material";
 import ArrowUpwardIcon from "@mui/icons-material/ArrowUpward";
 import ArrowDownwardIcon from "@mui/icons-material/ArrowDownward";
+import InteractionButton from "./InteractionButton";
 
 export default function FeedPost() {
 	return (
 		<>
 			<Card raised={false} sx={{ background: "#121212" }}>
-				<CardActionArea component="span" className="rounded-[32px]">
+				<Box className="rounded-[32px]" >
 					<CardContent className="mx-1">
 						<Avatar className="my-1" sx={{ width: 24, height: 24 }}></Avatar>
 						<Typography gutterBottom variant="h5" component="div">
@@ -14,7 +15,7 @@ export default function FeedPost() {
 						</Typography>
 						<CardMedia component="img" className="rounded-2xl" image="static\reptile.jpeg" />
 						<CardActions>
-							<Button variant="contained" className="rounded-full">
+							<InteractionButton color="primary.main">
 								<IconButton>
 									<ArrowUpwardIcon className="text-base" />
 								</IconButton>
@@ -22,7 +23,8 @@ export default function FeedPost() {
 								<IconButton>
 									<ArrowDownwardIcon className="text-base" />
 								</IconButton>
-							</Button>
+							</InteractionButton>
+
 							<Button variant="contained" className="rounded-full">
 								3 mil
 							</Button>
@@ -34,7 +36,7 @@ export default function FeedPost() {
 							</Button>
 						</CardActions>
 					</CardContent>
-				</CardActionArea>
+				</Box>
 			</Card>
 		</>
 	);
