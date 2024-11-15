@@ -6,21 +6,21 @@ export default function FeedPost() {
 	return (
 		<>
 			<Card raised={false} sx={{ background: "#121212" }}>
-				<CardActionArea>
+				<CardActionArea component="span" className="rounded-[32px]">
 					<CardContent className="mx-1">
-						<Avatar></Avatar>
+						<Avatar className="my-1" sx={{ width: 24, height: 24 }}></Avatar>
 						<Typography gutterBottom variant="h5" component="div">
 							Lizard
 						</Typography>
-						<CardMedia component="img" className="rounded-2xl" height="140" sx={{ border: 1 }} />
+						<CardMedia component="img" className="rounded-2xl" image="static\reptile.jpeg" />
 						<CardActions>
 							<Button variant="contained" className="rounded-full">
-								<IconButton size="small">
-									<ArrowUpwardIcon />
+								<IconButton>
+									<ArrowUpwardIcon className="text-base" />
 								</IconButton>
 								46 mil
-								<IconButton size="small">
-									<ArrowDownwardIcon />
+								<IconButton>
+									<ArrowDownwardIcon className="text-base" />
 								</IconButton>
 							</Button>
 							<Button variant="contained" className="rounded-full">
