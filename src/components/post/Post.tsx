@@ -6,17 +6,17 @@ import WorkspacePremiumIcon from "@mui/icons-material/WorkspacePremium";
 import ShareIcon from "@mui/icons-material/Share";
 import InteractionButton from "./InteractionButton";
 
-export default function FeedPost() {
+export default function FeedPost({ image }: { image: string }) {
 	return (
 		<>
-			<Card elevation={0} raised={false} sx={{ background: "#121212" }}>
+			<Card elevation={0} raised={false} sx={{ background: "#121212", maxWidth:"800px" }}>
 				<Box className="rounded-[32px] hover:bg-[#252525] cursor-pointer">
 					<CardContent className="mx-1">
 						<Avatar className="my-1" sx={{ width: 24, height: 24 }}></Avatar>
 						<Typography gutterBottom variant="h5" component="div">
 							Lizard
 						</Typography>
-						<CardMedia component="img" className="rounded-2xl" image="static\reptile.jpeg" />
+						<CardMedia component="img" className="rounded-2xl" image={image} />
 						<CardActions>
 							<InteractionButton color="secondary.main">
 								<IconButton>
