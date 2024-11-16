@@ -10,8 +10,8 @@ export default function InteractionButton({ children, color = "#fff" }: Readonly
 					display: "flex",
 					justifyContent: "center",
 					alignItems: "center",
-				}}
-				className="rounded-full">
+					borderRadius: "999px",
+				}}>
 				{children}
 			</Box>
 		</>
