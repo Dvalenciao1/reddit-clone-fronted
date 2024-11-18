@@ -1,5 +1,9 @@
 @tailwind utilities;
 
 * {
+	scrollbar-width: auto;
+}
+
+.MuiBox-root {
 	scrollbar-width: thin;
 }
