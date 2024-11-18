@@ -1,6 +1,7 @@
 import Carousel from "@/components/post/carousel";
+import Populars from "@/components/post/Populars";
 import FeedPost from "@/components/post/Post";
-import { Box, Grid2 } from "@mui/material";
+import { Box } from "@mui/material";
 
 export default function Home() {
 	return (
@@ -15,7 +16,9 @@ export default function Home() {
 							<FeedPost image="static/iguana.jpg"></FeedPost>
 						</Box>
 					</div>
-					<Grid2>Comunidades Populares</Grid2>
+					<div>
+						<Populars />
+					</div>
 				</div>
 			</Box>
 		</>
