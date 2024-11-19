@@ -3,7 +3,7 @@ import { Avatar, Box, Card, CardContent, List, ListItem, ListItemAvatar, ListIte
 export default function Populars() {
 	return (
 		<>
-			<Card sx={{ mt: 1, background: "#000", borderRadius: "8px" }}>
+			<Card sx={{ mt: 1, background: "#000", borderRadius: "8px", position: "sticky", top: "66px" }}>
 				<CardContent>
 					<Box component="div">
 						<Typography gutterBottom variant="button" sx={{ color: "#8BA2AD" }} component="div">

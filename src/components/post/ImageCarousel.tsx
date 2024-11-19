@@ -1,7 +1,6 @@
-import { Avatar, Card, CardActionArea, CardContent, CardMedia, Stack, Typography } from "@mui/material";
-import { ImageCarousel } from "./ImageCarousel";
+import { Avatar, Card, CardActionArea, CardContent, CardMedia, Typography } from "@mui/material";
 
-export default function Carousel() {
+export function ImageCarousel() {
 	return (
 		<>
 			<Card>
