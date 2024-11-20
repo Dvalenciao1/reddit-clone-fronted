@@ -3,7 +3,7 @@ import { Avatar, Card, CardActionArea, CardContent, CardMedia, Typography } from
 export function ImageCarousel() {
 	return (
 		<>
-			<Card>
+			<Card sx={{ minWidth: "280px", borderRadius: "16px", scrollSnapAlign: "start" }}>
 				<CardActionArea sx={{ position: "relative", width: "280px" }}>
 					<CardMedia sx={{ position: "absolute" }} component="img" image="static/iguana.jpg" alt="green iguana" />
 					<CardContent sx={{ position: "relative", height: "210px", display: "flex", flexDirection: "column", justifyContent: "end" }}>
