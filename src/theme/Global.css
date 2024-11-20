@@ -7,3 +7,7 @@
 .MuiBox-root {
 	scrollbar-width: thin;
 }
+
+.remove-scrollbar {
+	scrollbar-width: none;
+}
