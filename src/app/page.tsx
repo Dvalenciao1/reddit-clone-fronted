@@ -8,10 +8,8 @@ export default function Home() {
 		<>
 			<Box sx={{ flexGrow: 1, height: "100vh", margin: "12px 12px" }}>
 				<div className="grid grid-cols-3 gap-4 ">
-					<div className="col-span-3 flex flex-row">
-						{[...Array(10)].map((_, i) => (
-							<Carousel key={i}></Carousel>
-						))}
+					<div className="col-span-3">
+						<Carousel></Carousel>
 					</div>
 					<div className="col-span-2">
 						{[...Array(10)].map((_, i) => (
