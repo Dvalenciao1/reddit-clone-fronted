@@ -11,3 +11,25 @@
 .remove-scrollbar {
 	scrollbar-width: none;
 }
+.swiper-button-disabled {
+	display: none !important;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+	margin: 0px 10px;
+}
+
+.swiper-button-prev:after,
+.swiper-button-next:after {
+	color: #fff;
+	font-size: 16px !important;
+	border-radius: 100%;
+	padding: 12px;
+	background-color: #0009;
+}
+
+.swiper-button-prev:hover:after,
+.swiper-button-next:hover:after {
+	background-color: #000c;
+}
