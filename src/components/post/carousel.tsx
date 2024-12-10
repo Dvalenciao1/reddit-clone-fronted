@@ -10,7 +10,7 @@ import "swiper/css";
 import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
-import { EffectCoverflow, Navigation, Pagination } from "swiper/modules";
+import { Navigation } from "swiper/modules";
 
 export default function Carousel() {
 	return (
