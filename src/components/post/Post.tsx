@@ -12,7 +12,7 @@ export default function FeedPost({ image }: { image: string }) {
 		<>
 			<Card elevation={0} raised={false} sx={{ background: "#121212", maxWidth: "800px" }}>
 				<Box className="rounded-[32px] hover:bg-[#252525] cursor-pointer">
-					<CardContent className="mx-1" sx={{ mx: 1, py: 0 }}>
+					<CardContent sx={{ mx: 1, py: 0 }}>
 						<Box className="flex justify-between">
 							<Box sx={{ display: "flex", alignItems: "center" }}>
 								<Avatar sx={{ width: 24, height: 24, my: 1 }}></Avatar>

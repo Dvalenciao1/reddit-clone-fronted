@@ -29,8 +29,8 @@ export default function ClippedDrawer({
 						<TextField size="small" slotProps={{ input: { style: { borderRadius: "50px" } } }} sx={{ width: "35rem" }} label="Search Reddit"></TextField>
 					</Box>
 					<Box sx={{ flexGrow: 2, display: "flex", justifyContent: "flex-end", gap: 2 }}>
-						<Button color="secondary" variant="contained" sx={{ borderRadius: 5, display: { xs: "none", md: "flex" } }} startIcon={<QrCode />}>
-							Get Access
+						<Button color="secondary" variant="contained" sx={{ borderRadius: 5, textTransform: 'none', display: { xs: "none", md: "flex" } }} startIcon={<QrCode />}>
+							Descargar app
 						</Button>
 						<LoginForm />
 						<IconButton aria-label="more">
@@ -51,7 +51,7 @@ export default function ClippedDrawer({
 					<NestedList list={itemList} />
 				</Box>
 			</Drawer>
-			<Box component="main" sx={{ flexGrow: 1, display: "flex", justifyContent: "center", pt: 8, px: 5, height: "100vh" }} className="">
+			<Box component="main" sx={{ flexGrow: 1, display: "flex", justifyContent: "center", pt: 8, px: 5, height: "100vh" }}>
 				<Box component="div" sx={{ width: "1120px", maxWidth: "1120px" }}>
 					{children}
 				</Box>

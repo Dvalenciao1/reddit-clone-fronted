@@ -16,8 +16,8 @@ export default function LoginForm() {
 
 	return (
 		<>
-			<Button color="primary" variant="contained" sx={{ borderRadius: 5 }} onClick={handleClickOpen}>
-				Login
+			<Button color="primary" variant="contained" sx={{ borderRadius: 5, textTransform: "none" }} onClick={handleClickOpen}>
+				Iniciar sesión
 			</Button>
 			<Dialog fullWidth={true} maxWidth={"sm"} open={open} onClose={handleClose}>
 				<DialogActions>
