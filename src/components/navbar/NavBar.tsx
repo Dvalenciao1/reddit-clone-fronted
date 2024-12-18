@@ -5,7 +5,7 @@ import { Typography, Toolbar, Button, AppBar, Drawer, Box, IconButton, TextField
 import { MoreHoriz, QrCode } from "@mui/icons-material";
 import Reddit from "../icon/reddit";
 import NestedList from "../list/NestedList";
-import LoginForm from "../auth/loginForm";
+import DialogAuth from "../auth/dialogAuth";
 import { itemList } from "@/utils/menu";
 
 const drawerWidth = 271;
@@ -32,7 +32,7 @@ export default function ClippedDrawer({
 						<Button color="secondary" variant="contained" sx={{ borderRadius: 5, textTransform: 'none', display: { xs: "none", md: "flex" } }} startIcon={<QrCode />}>
 							Descargar app
 						</Button>
-						<LoginForm />
+						<DialogAuth />
 						<IconButton aria-label="more">
 							<MoreHoriz />
 						</IconButton>
