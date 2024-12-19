@@ -6,10 +6,10 @@ import MapsUgcIcon from "@mui/icons-material/MapsUgc";
 import WorkspacePremiumIcon from "@mui/icons-material/WorkspacePremium";
 import ShareIcon from "@mui/icons-material/Share";
 import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
+import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import InteractionButton from "./InteractionButton";
 import { useRouter } from "next/navigation";
-
-export default function FeedPost({ image, content }: { image?: string; content?: string }) {
+export function ViewPost({ image, content }: { image?: string; content?: string }) {
 	const router = useRouter();
 	const postContent = () => {
 		if (content === "" && !image) return null;
@@ -18,20 +18,24 @@ export default function FeedPost({ image, content }: { image?: string; content?:
 	};
 	return (
 		<>
-			<Card elevation={0} raised={false} sx={{ background: "#121212", maxWidth: "800px", minWidth: "600px" }}>
-				<Box className="rounded-[32px] hover:bg-[#252525] cursor-pointer">
+			<Card elevation={0} raised={false} sx={{ background: "#121212", maxWidth: "800px" }}>
+				<Box className="rounded-[32px]  cursor-pointer">
 					<CardContent sx={{ mx: 1, py: 0 }}>
-						<Box>
+						<Box className="flex justify-between">
 							<Box sx={{ display: "flex", alignItems: "center" }}>
+								<IconButton
+									onClick={() => {
+										router.back();
+									}}
+									sx={{ position: "absolute", mx: 1, maxWidth: "32px", maxHeight: "32px", backgroundColor: "#2A3236", transform: "translate(-160%)" }}>
+									<ArrowBackIcon />
+								</IconButton>
 								<Avatar sx={{ width: 24, height: 24, my: 1 }}></Avatar>
 								<Typography sx={{ mx: 2 }} variant="caption" color="text.secondary">
 									r/aww • hace 8 h
 								</Typography>
 							</Box>
-							<Box sx={{ display: "", alignItems: "center" }}>
-								<Button sx={{ "mx": 1, "bgcolor": "#115BCA", "borderRadius": "999px", "height": "24px", "textTransform": "capitalize", ":hover": { bgcolor: "#1870F4" } }} variant="contained">
-									Unirse
-								</Button>
+							<Box sx={{ display: "flex", alignItems: "center" }}>
 								<IconButton sx={{ mx: 1, maxWidth: "32px", maxHeight: "32px" }}>
 									<MoreHorizIcon />
 								</IconButton>
@@ -52,14 +56,7 @@ export default function FeedPost({ image, content }: { image?: string; content?:
 								</IconButton>
 							</InteractionButton>
 
-							<Button
-								onClick={() => {
-									router.push("/comment");
-								}}
-								startIcon={<MapsUgcIcon />}
-								variant="contained"
-								color="secondary"
-								sx={{ borderRadius: 6, maxHeight: "32px" }}>
+							<Button startIcon={<MapsUgcIcon />} variant="contained" color="secondary" sx={{ borderRadius: 6, maxHeight: "32px" }}>
 								3 mil
 							</Button>
 							<Button variant="contained" color="secondary" sx={{ borderRadius: 6, maxHeight: "32px" }}>

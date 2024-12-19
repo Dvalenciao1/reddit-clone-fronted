@@ -1,6 +1,6 @@
 import { Avatar, Box, Card, CardContent, List, ListItem, ListItemAvatar, ListItemButton, ListItemText, Typography } from "@mui/material";
 
-export default function Populars() {
+export default function Popular() {
 	return (
 		<>
 			<Card sx={{ mt: 1, background: "#000", borderRadius: "8px", position: "sticky", top: "66px" }}>

@@ -1,6 +1,6 @@
 "use client";
 import React, { use, useEffect } from "react";
-import axios from "axios";
+import axios from "@/utils/axios";
 import { Button, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle, Divider, IconButton, Typography } from "@mui/material";
 import ClearRoundedIcon from "@mui/icons-material/ClearRounded";
 import AppleIcon from "@mui/icons-material/Apple";
@@ -18,8 +18,9 @@ export default function DialogAuth() {
 
 	const handledLogin = async (user: IUserLogin) => {
 		axios
-			.post("http://localhost:3000/api/v1/auth/login", user)
+			.post("/auth/login", user)
 			.then((response) => {
+				console.log("🚀 ~ file: dialogAuth.tsx:23 ~ response:", response);
 				handleClose();
 			})
 			.catch((error) => {
@@ -28,7 +29,7 @@ export default function DialogAuth() {
 	};
 	const handledRegister = async (user: IUserRegister) => {
 		axios
-			.post("http://localhost:3000/api/v1/auth/sign", user)
+			.post("/auth/sign", user)
 			.then((response) => {
 				handleClose();
 			})
