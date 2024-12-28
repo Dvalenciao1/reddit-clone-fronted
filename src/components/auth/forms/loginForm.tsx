@@ -24,7 +24,7 @@ export function LoginForm({ emailChange, passwordChange, eventClick }: LoginForm
 				</Typography>
 				<Typography variant="body2">
 					New to Reddit? &nbsp;
-					<Link color="info.dark" sx={{ "&:hover": { color: "info.light" } }} onClick={handledClick} underline="none">
+					<Link color="info.dark" sx={{ "&:hover": { color: "info.light" } }} onClick={handledClick} href="#" underline="none">
 						Sign Up
 					</Link>
 				</Typography>

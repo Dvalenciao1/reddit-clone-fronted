@@ -19,7 +19,7 @@ export default function RegisterForm({ emailChange, passwordChange, eventClick }
 				<Typography variant="body2"></Typography>
 				<Typography variant="body2">
 					Already a redditor?&nbsp;
-					<Link color="info.dark" sx={{ "&:hover": { color: "info.light" } }} onClick={handledClick} underline="none">
+					<Link color="info.dark" sx={{ "&:hover": { color: "info.light" } }} onClick={handledClick} href="#" underline="none">
 						Log in
 					</Link>
 				</Typography>

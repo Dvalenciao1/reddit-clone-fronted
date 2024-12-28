@@ -1,7 +1,13 @@
-export interface IUserLogin {
+export interface IUserRegister {
 	email: string;
 	password: string;
-	token?: string;
+}
+export interface IUser {
+	id: number;
+	username: string;
 }
 
-export interface IUserRegister extends IUserLogin {}
+export interface IUserLogin extends IUserRegister {
+	username?: string;
+	token?: string;
+}

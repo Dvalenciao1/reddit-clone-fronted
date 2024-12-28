@@ -9,7 +9,7 @@ import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import InteractionButton from "./InteractionButton";
 import { useRouter } from "next/navigation";
-export function ViewPost({ image, content }: { image?: string; content?: string }) {
+export default function ViewPost({ image, content, title }: { title: string; image?: string; content?: string }) {
 	const router = useRouter();
 	const postContent = () => {
 		if (content === "" && !image) return null;
@@ -42,7 +42,7 @@ export function ViewPost({ image, content }: { image?: string; content?: string 
 							</Box>
 						</Box>
 						<Typography gutterBottom variant="h5" component="div">
-							Lizard
+							{title}
 						</Typography>
 						{postContent()}
 						<CardActions>
