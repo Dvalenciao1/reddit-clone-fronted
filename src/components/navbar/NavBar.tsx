@@ -53,6 +53,7 @@ export default function ClippedDrawer({
 			</Drawer>
 			<Box component="main" sx={{ flexGrow: 1, display: "flex", justifyContent: "center", pt: 8, px: 5, height: "100vh" }}>
 				<Box component="div" sx={{ width: "1120px" }}>
+					
 					{children}
 				</Box>
 			</Box>

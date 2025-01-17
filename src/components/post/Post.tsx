@@ -9,13 +9,15 @@ import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
 import InteractionButton from "./InteractionButton";
 import { useRouter } from "next/navigation";
 
-export default function FeedPost({ image, content }: { image?: string; content?: string }) {
+export default function FeedPost({ title, image, content }: { title: string; image?: string; content?: string }) {
 	const router = useRouter();
+
 	const postContent = () => {
 		if (content === "" && !image) return null;
 		if (content) return <Typography variant="body1">{content}</Typography>;
 		return <CardMedia component="img" className="rounded-2xl" image={image} />;
 	};
+
 	return (
 		<>
 			<Card elevation={0} raised={false} sx={{ background: "#121212", maxWidth: "800px", minWidth: "600px" }}>
@@ -38,7 +40,7 @@ export default function FeedPost({ image, content }: { image?: string; content?:
 							</Box>
 						</Box>
 						<Typography gutterBottom variant="h5" component="div">
-							Lizard
+							{title}
 						</Typography>
 						{postContent()}
 						<CardActions>

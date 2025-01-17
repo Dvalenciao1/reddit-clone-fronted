@@ -1,7 +1,7 @@
 import { ViewPost } from "@/components/post/viewPost";
 import Popular from "@/components/post/Popular";
 import { Box } from "@mui/material";
-import { Comment } from "@/components/post/Comment";
+import Comment from "@/components/post/Comment";
 
 interface Comment {
 	id: string;
@@ -11,6 +11,25 @@ interface Comment {
 	timestamp: string;
 	votes: number;
 	replies?: Comment[];
+}
+
+interface IPost {
+	id: number;
+	title: string;
+	image: string;
+	user: {
+		id: number;
+		username: string;
+	};
+	comments: {
+		id: number;
+		parentId?: number;
+		content: string;
+		user: {
+			id: number;
+			username: string;
+		};
+	}[];
 }
 
 export default function CommentsPage() {
@@ -64,7 +83,7 @@ export default function CommentsPage() {
 		<>
 			<Box sx={{ display: "flex", gap: 2 }}>
 				<div className="flex-[1] my-2">
-					<ViewPost title={post.title} image={post.image}></ViewPost>
+					<ViewPost image={post.image}></ViewPost>
 					<Comment comments={post.comments}></Comment>
 				</div>
 				<Popular></Popular>
