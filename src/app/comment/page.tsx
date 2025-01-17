@@ -1,8 +1,36 @@
 import ViewPost from "@/components/post/viewPost";
 import Popular from "@/components/post/Popular";
 import { Box } from "@mui/material";
-import { IPost } from "@/interfaces/IPost";
 import Comment from "@/components/post/Comment";
+
+interface Comment {
+	id: string;
+	author: string;
+	avatar: string;
+	content: string;
+	timestamp: string;
+	votes: number;
+	replies?: Comment[];
+}
+
+interface IPost {
+	id: number;
+	title: string;
+	image: string;
+	user: {
+		id: number;
+		username: string;
+	};
+	comments: {
+		id: number;
+		parentId?: number;
+		content: string;
+		user: {
+			id: number;
+			username: string;
+		};
+	}[];
+}
 
 export default function CommentsPage() {
 	const post: IPost = {
@@ -16,42 +44,34 @@ export default function CommentsPage() {
 		comments: [
 			{
 				id: 1,
-				content: "Que mal",
+				content: "Oh dios",
 				user: {
 					id: 1,
 					username: "pepito",
 				},
-				comments: [
-					{
-						id: 2,
-						content: "Que bien",
-						user: {
-							id: 2,
-							username: "PuraRaza",
-						},
-					},
-					{
-						id: 1,
-						content: "Que malo",
-						user: {
-							id: 1,
-							username: "pepito",
-						},
-						comments: [
-							{
-								id: 2,
-								content: "Que bien is",
-								user: {
-									id: 2,
-									username: "PuraRaza",
-								},
-							},
-						],
-					},
-				],
+			},
+			{
+				id: 2,
+				parentId: 1,
+				content: "Oh dios",
+				user: {
+					id: 1,
+					username: "pepito",
+				},
+			},
+			{
+				id: 3,
+				parentId: 2,
+				content: "Oh dios",
+				user: {
+					id: 1,
+					username: "pepito",
+				},
+
 			},
 			{
 				id: 1,
+				parentId: 3,
 				content: "Oh dios",
 				user: {
 					id: 1,
@@ -64,13 +84,9 @@ export default function CommentsPage() {
 		<>
 			<Box sx={{ display: "flex", gap: 2 }}>
 				<div className="flex-[1] my-2">
-					<ViewPost title={post.title} image={post.image}></ViewPost>
-					{post.comments.map((comment) => {
-						return <Comment key={comment.id} comments={comment}></Comment>;
-					})}
-				</div>
-				<div>
-					<Popular></Popular>
+
+					<ViewPost image={post.image}></ViewPost>
+					<Comment comments={post.comments}></Comment>
 				</div>
 			</Box>
 		</>

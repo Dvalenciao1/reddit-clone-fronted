@@ -5,7 +5,7 @@ export function ImageCarousel() {
 		<>
 			<Card sx={{ minWidth: "280px", borderRadius: "16px", scrollSnapAlign: "start" }}>
 				<CardActionArea sx={{ position: "relative", width: "280px" }}>
-					<CardMedia sx={{ position: "absolute" }} component="img" image="static/iguana.jpg" alt="green iguana" />
+					<CardMedia sx={{ position: "absolute" }} component="img" image="iguana.jpg" alt="green iguana" />
 					<CardContent sx={{ position: "relative", height: "210px", display: "flex", flexDirection: "column", justifyContent: "end", py: "5px" }}>
 						<Typography component="h2" sx={{ fontWeight: "700", fontSize: "18px" }}>
 							Chargers defeat Bengals

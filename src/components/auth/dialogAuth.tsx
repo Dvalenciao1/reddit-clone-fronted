@@ -1,5 +1,5 @@
 "use client";
-import React, { use, useEffect } from "react";
+import React, { useEffect } from "react";
 import axios from "@/utils/axios";
 import { Button, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle, Divider, IconButton, Typography } from "@mui/material";
 import ClearRoundedIcon from "@mui/icons-material/ClearRounded";
@@ -8,6 +8,7 @@ import GoogleIcon from "../icon/GoogleIcon";
 import RegisterForm from "./forms/registerForm";
 import { LoginForm } from "./forms/loginForm";
 import { IUserLogin, IUserRegister } from "@/interfaces/IUser";
+import { AxiosError, AxiosResponse } from "axios";
 
 export default function DialogAuth() {
 	const [open, setOpen] = React.useState(false);
@@ -19,21 +20,21 @@ export default function DialogAuth() {
 	const handledLogin = async (user: IUserLogin) => {
 		axios
 			.post("/auth/login", user)
-			.then((response) => {
-				console.log("🚀 ~ file: dialogAuth.tsx:23 ~ response:", response);
+			.then((response: AxiosResponse) => {
+				console.log("🚀 ~ file: dialogAuth.tsx:24 ~ response:", response);
 				handleClose();
 			})
-			.catch((error) => {
+			.catch((error: AxiosError) => {
 				console.error("There was an error making the request!", error);
 			});
 	};
 	const handledRegister = async (user: IUserRegister) => {
 		axios
 			.post("/auth/sign", user)
-			.then((response) => {
+			.then((response: AxiosResponse) => {
 				handleClose();
 			})
-			.catch((error) => {
+			.catch((error: AxiosError) => {
 				console.error("There was an error making the request!", error);
 			});
 	};

@@ -12,13 +12,13 @@ interface RenderCommentProps {
 	goals: number;
 	subComments?: RenderCommentProps[];
 }
-export default function RenderComment({ user, content, vote, goals, subComments }: RenderCommentProps) {
+export default function RenderComment({ comments = [] }: { comments: RenderCommentProps[] }) {
 	const [open, setOpen] = React.useState(false);
-	if (!subComments) {
+	if (!comments) {
 		return (
 			<>
 				<ListItemButton sx={{ "&:hover": { backgroundColor: "transparent" } }} disableRipple onClick={() => setOpen(!open)}>
-					<ListItemText primary={content} />
+					{/* <ListItemText primary={comments[0].content} /> */}
 				</ListItemButton>
 			</>
 		);
@@ -27,15 +27,15 @@ export default function RenderComment({ user, content, vote, goals, subComments 
 			<>
 				<ListItemButton sx={{ "&:hover": { backgroundColor: "transparent" } }} disableRipple onClick={() => setOpen(!open)}>
 					{open ? <RemoveCircleOutline /> : <AddCircleOutline />}
-					<ListItemText sx={{ px: 1 }} primary={content} />
+					<ListItemText sx={{ px: 1 }} primary={comments[0].content} />
 				</ListItemButton>
 
 				<Collapse in={open}>
 					<List>
-						{subComments.map((items, index) => {
+						{comments.map((items, index) => {
 							return (
 								<Box sx={{ borderLeft: 2 }} key={items.content}>
-									<RenderComment {...items} />
+									{/* <RenderComment comments={items} /> */}
 								</Box>
 							);
 						})}
