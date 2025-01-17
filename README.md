@@ -14,7 +14,7 @@ pnpm dev
 # or
 bun dev
 ```
-Use the API [`Backend_Api`](https://github.com/Dvalenciao1/challenge-backend)
+Use the API [`Backend_Api`](https://github.com/Dvalenciao1/reddit-clone-backend)
 
 Open [http://localhost:3001](http://localhost:3001) with your browser to see the result.
 
