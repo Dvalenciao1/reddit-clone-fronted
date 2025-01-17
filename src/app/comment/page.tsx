@@ -1,4 +1,4 @@
-import { ViewPost } from "@/components/post/viewPost";
+import ViewPost from "@/components/post/viewPost";
 import Popular from "@/components/post/Popular";
 import { Box } from "@mui/material";
 import Comment from "@/components/post/Comment";
@@ -67,6 +67,7 @@ export default function CommentsPage() {
 					id: 1,
 					username: "pepito",
 				},
+
 			},
 			{
 				id: 1,
@@ -83,10 +84,10 @@ export default function CommentsPage() {
 		<>
 			<Box sx={{ display: "flex", gap: 2 }}>
 				<div className="flex-[1] my-2">
+
 					<ViewPost image={post.image}></ViewPost>
 					<Comment comments={post.comments}></Comment>
 				</div>
-				<Popular></Popular>
 			</Box>
 		</>
 	);

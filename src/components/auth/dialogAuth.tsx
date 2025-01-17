@@ -66,6 +66,7 @@ export default function DialogAuth() {
 				sx={{ borderRadius: 5, textTransform: "none" }}
 				onClick={() => {
 					handleOpen();
+					setShowLogin(true);
 				}}>
 				Iniciar sesión
 			</Button>
